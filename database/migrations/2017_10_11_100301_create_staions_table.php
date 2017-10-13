@@ -16,7 +16,7 @@ class CreateStaionsTable extends Migration
         Schema::create('staions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->enum('status', ['free', 'idle', 'busy']);
+            $table->enum('status', ['free', 'idle', 'busy'])->default('free');
             $table->timestamps();
         });
     }
