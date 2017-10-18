@@ -15,16 +15,18 @@ class CreateGameStationTable extends Migration
     {
         Schema::create('game_station', function (Blueprint $table) {
             $table->increments('id');
+
             $table->integer('game_id')->unsigned()->index();
             $table->integer('station_id')->unsigned()->index();
+
             $table->timestamps();
 
             $table->foreign('game_id')
                     ->references('id')->on('games')
                     ->onDelete('cascade');
 
-            $table->foreign('game_id')
-                    ->references('id')->on('games')
+            $table->foreign('station_id')
+                    ->references('id')->on('stations')
                     ->onDelete('cascade');
         });
     }

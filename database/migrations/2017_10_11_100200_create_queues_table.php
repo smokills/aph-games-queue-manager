@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStaionsTable extends Migration
+class CreateQueuesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateStaionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('staions', function (Blueprint $table) {
+        Schema::create('queues', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->enum('status', ['free', 'idle', 'busy'])->default('free');
+            $table->string('type');
+            $table->enum('status', ['waiting', 'processing', 'idle'])->default('waiting');
+            $table->integer('needed_stations')->unsigned();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateStaionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('staions');
+        Schema::dropIfExists('queues');
     }
 }

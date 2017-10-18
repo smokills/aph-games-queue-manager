@@ -16,7 +16,7 @@ class CreateGamePlayerTable extends Migration
         Schema::create('game_player', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('game_id')->unsigned()->index();
-            $table->integer('palyer_id')->unsigned()->index();
+            $table->integer('player_id')->unsigned()->index();
             $table->timestamps();
 
             $table->foreign('game_id')

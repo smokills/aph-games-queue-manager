@@ -15,14 +15,14 @@ class CreatePlayersTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ign');
             $table->integer('queue_id')->unsigned()->index();
+            $table->string('ign');
             $table->timestamps();
 
             $table->foreign('queue_id')
                     ->references('id')
                     ->on('queues')
-                    ->onDelete('Cascade');
+                    ->onDelete('cascade');
         });
     }
 
