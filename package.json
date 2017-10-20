@@ -15,7 +15,12 @@
         "cross-env": "^5.0.1",
         "jquery": "^3.1.1",
         "laravel-mix": "^1.0",
-        "lodash": "^4.17.4",
-        "vue": "^2.1.10"
+        "lodash": "^4.17.4"
+    },
+    "dependencies": {
+        "moment": "^2.19.1",
+        "select2": "^4.0.4",
+        "sweetalert2": "^6.11.0",
+        "toastr": "^2.1.2"
     }
 }
