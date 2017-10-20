@@ -1,9 +1,27 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 // Variables
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Toastr
+@import "node_modules/toastr/toastr";
+
+// Sweet Alert
+@import "node_modules/sweetalert2/src/sweetalert2";
+
+// Select 2
+@import "node_modules/select2/src/scss/core";
+
+.align-center {
+    text-align: center;
+}
+
+.timer {
+    font-size: 28px;
+    font-weight: bold;
+}
