@@ -10,11 +10,11 @@ class Game extends Model
 
     public function stations()
     {
-        return $this->belongsToMany(App\Station::class);
+        return $this->belongsToMany(\App\Station::class);
     }
 
     public function players()
     {
-        return $this->hasMany(App\Player::class);
+        return $this->hasMany(\App\Player::class);
     }
 }
