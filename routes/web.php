@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::resource('games', 'GamesController');
+Route::resource('stations', 'StationsController');
+Route::resource('queue', 'QueueController');
