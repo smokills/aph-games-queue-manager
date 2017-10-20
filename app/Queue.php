@@ -14,6 +14,6 @@ class Queue extends Model
 
     public function players()
     {
-        return $this->hasMany(App\Player::class);
+        return $this->hasMany(\App\Player::class);
     }
 }
