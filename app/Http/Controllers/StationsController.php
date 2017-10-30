@@ -120,7 +120,8 @@ class StationsController extends Controller
     protected function validationRules()
     {
         return [
-            'name' => 'required|string|max:20'
+            'name' => 'required|string|max:20',
+            'duration' => 'required|numeric',
         ];
     }
 }

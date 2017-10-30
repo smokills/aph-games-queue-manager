@@ -9,7 +9,7 @@
     </div>
 </div>
 
-@include('partials/home/queue_modal')
+{{-- @include('partials/home/queue_modal') --}}
 
 @include('partials/home/queue')
 

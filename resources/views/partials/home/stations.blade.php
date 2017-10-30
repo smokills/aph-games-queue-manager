@@ -6,11 +6,18 @@
                     {{ $station->name }}
                     &nbsp;
 
-                    <a class="btn btn-primary btn-xs"
-                        href="#" data-timer-start="{{ $station->start_time }}">
+                    <a class="btn btn-primary btn-xs timer_start"
+                        href="#" data-timer_id="station-timer-{{ $station->id }}"
+                        data-timer-duration="{{ $station->duration }}">
                         <i class="glyphicon glyphicon-play"></i>
                     </a>
-                    @component('components/label', ['class' => 'pull-right'])
+
+                    <a class="btn btn-primary btn-xs timer_stop"
+                        href="#" data-timer_id="station-timer-{{ $station->id }}"
+                        data-timer-duration="{{ $station->duration }}">
+                        <i class="glyphicon glyphicon-stop"></i>
+                    </a>
+                    @component('components/label', ['class' => "pull-right station-timer-{$station->id}"])
                         @slot('type')
                             @switch($station->status)
                                 @case('free')
@@ -31,7 +38,7 @@
             <div class="panel-body">
                 <div class="timer align-center"
                 id="station-timer-{{ $station->id }}">
-                    15:00:00
+                    {{ $station->duration }}:00
                 </div>
 
                 <hr>
